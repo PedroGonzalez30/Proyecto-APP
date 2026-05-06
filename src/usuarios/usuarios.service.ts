@@ -21,22 +21,22 @@ export class UsuariosService {
         return { mensaje: "Usuario registrado exitosamente", usuario: usuarioSinPassword };
     }
 
-    async login(dto: LoginDto) {
-        const usuario = await this.prisma.usuario.findUnique({
-            where: { email: dto.email },
-        }); 
+    //async login(dto: LoginDto) {
+      //  const usuario = await this.prisma.usuario.findUnique({
+        //    where: { email: dto.email },
+        //}); 
 
-        if (!usuario) {
-            return { mensaje: "Email o contraseña incorrectas" };
-        }
+    //    if (!usuario) {
+    //        return { mensaje: "credenciales incorrectas" };
+    //    }
 
-        const passwordValido = await bcrypt.compare(dto.password, usuario.password);
+    //    const passwordValido = await bcrypt.compare(dto.password, usuario.password);
 
-        if (!passwordValido) {
-            return { mensaje: "Email o contraseña incorrectas" };
-        }
-        const { password, ...usuarioSinPassword } = usuario;
-        return { mensaje: "Login exitoso", usuario };
-    }
+    //   if (!passwordValido) {
+    //        return { mensaje: "credenciales incorrectas" };
+    //    }
+    //    const { password, ...usuarioSinPassword } = usuario;
+    //    return { mensaje: "Login exitoso", usuario };
+    //}
 }
 

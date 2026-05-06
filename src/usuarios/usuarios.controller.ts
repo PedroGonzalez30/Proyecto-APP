@@ -12,8 +12,8 @@ export class UsuariosController {
         return this.usuariosService.registrar(dto);
     }
 
-    @Post('login')
-    login(@Body() dto: LoginDto) {
-        return this.usuariosService.login(dto);
-    }
+    //@Post('login')
+    //login(@Body() dto: LoginDto) {
+    //    return this.usuariosService.login(dto);
+    //}
 }
