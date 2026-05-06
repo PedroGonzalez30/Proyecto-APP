@@ -39,10 +39,10 @@ export class AuthService {
       data: { refreshTokenHash },
     });
   }
-
-     async login(email: string, password: string) {
+    // LOGIN
+    async login(email: string, password: string) {
     const usuario = await this.prisma.usuario.findUnique({
-      where: { email },
+    where: { email },
     });
 
     if (!usuario) {

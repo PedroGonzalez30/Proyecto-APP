@@ -9,11 +9,18 @@ async function login() {
   });
 
   const datos = await respuesta.json();
+
   if (respuesta.ok) {
     localStorage.setItem('accessToken', datos.accessToken);
     localStorage.setItem('refreshToken', datos.refreshToken);
-    document.getElementById('mensaje').textContent = 'Login exitoso';
+    localStorage.setItem('usuario', JSON.stringify(datos.usuario));
+
+    if (datos.usuario.rol === 'ADMIN') {
+      window.location.href = '../dashboard/dashboard.html';
     } else {
-      document.getElementById('mensaje').textContent = 'Credenciales incorrectas';
+      document.getElementById('mensaje').textContent = 'Login exitoso';
+    }
+  } else {
+    document.getElementById('mensaje').textContent = 'Email o contraseña incorrectos';
   }
 }
