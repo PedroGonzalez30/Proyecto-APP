@@ -130,6 +130,37 @@ exports.Prisma.UsuarioScalarFieldEnum = {
   createdAt: 'createdAt'
 };
 
+exports.Prisma.ProductoScalarFieldEnum = {
+  idProducto: 'idProducto',
+  nombre: 'nombre',
+  descripcion: 'descripcion',
+  precio: 'precio',
+  stock: 'stock',
+  genero: 'genero',
+  createdAt: 'createdAt',
+  activo: 'activo',
+  IdMarca: 'IdMarca',
+  IdTipo: 'IdTipo'
+};
+
+exports.Prisma.MarcaScalarFieldEnum = {
+  idMarca: 'idMarca',
+  nombre: 'nombre',
+  activo: 'activo'
+};
+
+exports.Prisma.TipoScalarFieldEnum = {
+  idTipo: 'idTipo',
+  nombre: 'nombre',
+  activo: 'activo'
+};
+
+exports.Prisma.ImagenScalarFieldEnum = {
+  idImagen: 'idImagen',
+  url: 'url',
+  idProducto: 'idProducto'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -147,7 +178,11 @@ exports.Prisma.NullsOrder = {
 
 
 exports.Prisma.ModelName = {
-  Usuario: 'Usuario'
+  Usuario: 'Usuario',
+  Producto: 'Producto',
+  Marca: 'Marca',
+  Tipo: 'Tipo',
+  Imagen: 'Imagen'
 };
 
 /**

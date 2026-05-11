@@ -18,7 +18,7 @@ async function login() {
     if (datos.usuario.rol === 'ADMIN') {
       window.location.href = '../dashboard/dashboard.html';
     } else {
-      document.getElementById('mensaje').textContent = 'Login exitoso';
+      window.location.href = '../inicio/inicio.html';
     }
   } else {
     document.getElementById('mensaje').textContent = 'Email o contraseña incorrectos';

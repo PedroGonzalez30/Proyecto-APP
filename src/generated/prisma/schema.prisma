@@ -21,3 +21,40 @@ model Usuario {
   refreshTokenHash String?
   createdAt        DateTime @default(now())
 }
+
+model Producto {
+  idProducto  Int      @id @default(autoincrement())
+  nombre      String
+  descripcion String
+  precio      Float
+  stock       Int
+  genero      String
+  createdAt   DateTime @default(now())
+  activo      Boolean  @default(true)
+  IdMarca     Int
+  marca       Marca    @relation(fields: [IdMarca], references: [idMarca])
+  IdTipo      Int
+  tipo        Tipo     @relation(fields: [IdTipo], references: [idTipo])
+  imagenes    Imagen[]
+}
+
+model Marca {
+  idMarca   Int        @id @default(autoincrement())
+  nombre    String
+  activo    Boolean    @default(true)
+  productos Producto[]
+}
+
+model Tipo {
+  idTipo    Int        @id @default(autoincrement())
+  nombre    String
+  activo    Boolean    @default(true)
+  productos Producto[]
+}
+
+model Imagen {
+  idImagen   Int      @id @default(autoincrement())
+  url        String
+  idProducto Int
+  producto   Producto @relation(fields: [idProducto], references: [idProducto])
+}

@@ -9,11 +9,19 @@
 
     <h1>Panel de Administrador</h1>
 
-    <button onclick="verUsuarios()"> Usuarios</button>
-    <button onclick="verVentas()"> Ventas</button>
-    <button onclick="verInventario()"> Inventario</button>
-    <button onclick="verHistorial()"> Historial</button>
-    <button onclick="cerrarSesion()"> Cerrar Sesión</button>
+<h2>Gestión</h2>
+<button onclick="verUsuarios()">Usuarios</button>
+<button onclick="verVentas()">Ventas</button>
+<button onclick="verInventario()">Inventario</button>
+<button onclick="verHistorial()">Historial</button>
+<button onclick="location.href='../inicio/inicio.html'"> Ver Tienda</button>
+
+<h2>Catalogo</h2>
+<button onclick="irA('marca')">Agregar Marca</button>
+<button onclick="irA('tipo')">Agregar Tipo</button>
+<button onclick="irA('producto')">Agregar Producto</button>
+
+<button onclick="cerrarSesion()">Cerrar Sesión</button>
 
     <script src="dashboard.js"></script>
 </body>

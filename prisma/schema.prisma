@@ -22,3 +22,42 @@ model Usuario {
   createdAt DateTime @default(now())
   
 }
+
+model Producto {
+  idProducto          Int      @default(autoincrement()) @id
+  nombre      String
+  descripcion String
+  precio      Float
+  stock       Int
+  genero      String
+  createdAt   DateTime @default(now())
+  activo      Boolean  @default(true)
+  IdMarca      Int
+  marca        Marca    @relation(fields: [IdMarca], references: [idMarca])
+  IdTipo      Int
+  tipo         Tipo     @relation(fields: [IdTipo], references: [idTipo])
+  imagenes     Imagen[]
+
+}
+
+model Marca {
+  idMarca   Int       @default(autoincrement()) @id
+  nombre    String
+  activo    Boolean   @default(true)
+  productos Producto[]
+
+}
+
+model Tipo {
+  idTipo    Int       @default(autoincrement()) @id
+  nombre    String
+  activo    Boolean   @default(true)
+  productos Producto[]
+}
+
+model Imagen {
+  idImagen   Int      @default(autoincrement()) @id
+  url        String
+  idProducto Int
+  producto   Producto @relation(fields: [idProducto], references: [idProducto])
+}
